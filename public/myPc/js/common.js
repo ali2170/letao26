@@ -1,4 +1,5 @@
 $(function(){
+  // 进度条功能
   $(document).ajaxStart(function(){
     NProgress.start();
   })
@@ -6,6 +7,8 @@ $(function(){
     NProgress.done();
   })
 
+
+  // 判断是否登录(登录页除外)
   if(location.href.indexOf("login.html")==-1){
     // console.log("呵呵")
     $.ajax({
@@ -28,15 +31,14 @@ $(function(){
     $(".lt_content .head").toggleClass("toggle");
   })
 
-  // 分类切换显示
 
+  // 分类切换显示
   $(".son").parent().on("click",function(){
     $(".son").slideToggle();
   })
 
 
   // 退出功能
-
   $(".icon-logout").on("click",function(){
     $("#logoutModal").modal("show");
   })
@@ -54,4 +56,6 @@ $(function(){
       }
     })
   })
+
+  
 })
