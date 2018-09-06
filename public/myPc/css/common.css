@@ -114,10 +114,23 @@ ul,li{
   margin-top:20px;
 }
 
-#logoutModal .modal-body p{
+/* #logoutModal .modal-body p{
+  color:#a94442;
+}
+#logoutModal .modal-body p span{
+  margin-right:5px;
+}   */
+
+.modal-body p{
   color:#a94442;
 }
 
-#logoutModal .modal-body p span{
+.modal-body p span{
   margin-right:5px;
 }  
+
+table th,
+table td{
+  text-align:center;
+}
+
