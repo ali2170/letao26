@@ -82,7 +82,7 @@ ul,li{
   line-height:40px;
   color:#fff;
 }
-.lt_aside li>a.now{
+.lt_aside li a.now{
   border-left:3px solid #337ab7;
   background-color:#000;
 }

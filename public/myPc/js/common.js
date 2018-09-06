@@ -28,6 +28,12 @@ $(function(){
     $(".lt_content .head").toggleClass("toggle");
   })
 
+  // 分类切换显示
+
+  $(".son").parent().on("click",function(){
+    $(".son").slideToggle();
+  })
+
 
   // 退出功能
 
