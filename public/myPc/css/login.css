@@ -5,3 +5,9 @@
   color:#fff;
   font-size:18px;
 }
+.form-group{
+  /* margin-bottom:30px; */
+}
+label{
+  /* vertical-align: middle !importants; */
+}
