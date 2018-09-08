@@ -118,17 +118,35 @@
           <!-- <p><span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗?</p> -->
           <div class="container-fluid">
             <form class="form-horizontal" id="form">
+              
+              
               <div class="form-group">
-                <input type="text" class="form-control" id="categoryName" placeholder="请输入二级分类名称" name="categoryName">                  
+                  <div class="dropdown">
+                    <input type="hidden" name="categoryId" id="categoryId">                
+                    <span>一级分类：</span>
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        请选择
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                        <!-- 挖个坑 -->
+                        
+                      </ul>
+                    </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="BrandName" placeholder="请输入二级分类名称" name="brandName">                  
               </div>
               <div class="form-group up-pic">
+                <input type="hidden" name="brandLogo" id="brandLogo">
                 <button class="btn btn-default btn_up_pic">
                   上传图片
-                <input type="file" name="brandName" id="brandName">   
+                <input id="fileUpload" type="file" name="pic1" data-url="/category/addSecondCategoryPic">   
                 </button>
               </div>
               <div class="form-group">
-                <img src="./img/01.gif" width="100" height="100" alt="">
+                <img  class="upImg" src="./img/default.png" width="100" height="100" alt="">
               </div>
           </form>
           </div>
@@ -155,6 +173,12 @@
         <td><img width="50" height="50" src="{{v.brandLogo}}" alt=""></td>
       </tr>
 
+    {{/each}}
+  </script>
+
+  <script type="text/template" id="tpl2">
+    {{each rows v i}}
+    <li ><a href="#" data-id={{v.id}}>{{v.categoryName}}</a></li>    
     {{/each}}
   </script>
  
