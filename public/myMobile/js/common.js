@@ -8,4 +8,7 @@ $(function(){
   mui(".mui-slider").slider({
     interval:2000
   })
+
+
+  
 })

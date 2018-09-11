@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+
+.lt_product_title{
+  height:30px;
+  line-height:30px;
+  font-size:12px;
+  background-color:#eee;
+}
+
+.lt_product_title li{
+  float:left;
+  width:25%;
+}
+
+.lt_product_title li a{
+  display:block;
+  text-align:center;
+  color:#666;
+  font-size:12px;
+}
