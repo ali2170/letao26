@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+
+.btn_register{
+  display:block;
+  /* width: 100%; */
+  /* padding:0 10px; */
+  margin:0 10px;
+  font-size:16px;
+}
+mui-input-row{
+  /* border:1px solid red; */
+  margin:10px;
+  height: 40px;
+}

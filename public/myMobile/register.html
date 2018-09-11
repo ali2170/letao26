@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>移动端-注册页</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="./assets/fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+  <div class="lt_container">
+
+    <div class="lt_header">
+      <div class="left">
+          <a href="javascript:history.go(-1);">         
+            <span class="fa fa-chevron-left"></span>
+          </a> 
+      </div>
+      <h4>注册</h4>
+      <div class="right">
+        <!-- <a href="search.html">
+          <span class="fa fa-search"></span>            
+        </a> -->
+      </div>
+    </div>
+
+
+    <div class="lt_content">
+      <!-- <div class="lt_wrapper"> -->
+          
+          <form class="mui-input-group">
+              <div class="mui-input-row">
+              <input type="text" class="mui-input-clear" id="username" placeholder="请输入用户名">
+              </div>
+              <div class="mui-input-row">
+                  <input type="password" class="mui-input-password" id="password" placeholder="请输入密码">
+              </div>
+              <div class="mui-input-row">
+                  <input type="password" class="mui-input-password" id="password2" placeholder="请确认密码">
+              </div>
+              <div class="mui-input-row">
+                  <input type="tel"  id="mobile" placeholder="请输入手机号">
+              </div>
+              <div class="mui-input-row">
+                <input type="text"  placeholder="请输入验证码">
+                <btn class="btn mui-btn-default">呵呵</btn>  
+              </div>
+              <!-- <div class="mui-button-row"> -->
+              <a  type="button" class="btn_register mui-btn mui-btn-primary" >注册</a>
+              <!-- </div> -->
+          </form>
+    </div>
+
+    
+    <div class="lt_footer">
+      <a  href="index.html"><span class="fa fa-home"></span><p>首页</p></a>
+      <a  href="category.html"><span class="fa fa-align-justify"></span><p>分类</p></a>
+      <a  href="cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
+      <a  href="user.html"><span class="fa fa-user"></span><p>会员中心</p></a>
+    </div>
+
+
+
+  </div>
+
+
+
+  <script type="text/html" id="tpl">
+    
+  </script>
+
+  <script src="./assets/zepto/zepto.min.js"></script>
+  <script src="./assets/artTemplate/template.js"></script>
+  <script src="./assets/mui/js/mui.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/register.js"></script>
+</body>
+</html>
