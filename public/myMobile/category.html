@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>移动端-搜索页</title>
+  <title>移动端-分类页</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
   <link rel="stylesheet" href="./assets/fa/css/font-awesome.min.css">
@@ -20,43 +20,42 @@
             <span class="fa fa-chevron-left"></span>
           </a> 
       </div>
-      <h4>搜索中心</h4>
+      <h4>乐淘分页</h4>
       <div class="right">
-        <!-- <a href="search.html">
+        <a href="search.html">
           <span class="fa fa-search"></span>            
-        </a> -->
+        </a>
       </div>
     </div>
 
 
     <div class="lt_content">
       <!-- <div class="lt_wrapper"> -->
-          
-      <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
+      <div class="left mui-pull-left">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
           <!--这里放置真实显示的DOM内容-->
-          
-          <!-- 搜索模块 -->
-
-          <div class="lt_search">
-            <input type="text" name="search_txt" id="search_txt" placeholder="请输入搜索关键字">
-            <button class="btn mui-btn-primary btn_search">搜索</button>
-          </div>
-          
-          <!-- 历史记录模块 -->
-
-          <div class="lt_history">
-            
+            <!-- 哈哈 -->
+            <a class="now" href="javascript:;">运动馆</a>
+              
             <!-- 挖个坑 -->
           
           </div>
-
-
-
-
-
         </div>
       </div>
+
+      <div class="right">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+          <!--这里放置真实显示的DO1M内容-->
+            <!-- 111 -->
+
+            <!-- 挖个坑 -->
+            
+          </div>
+        </div>
+      </div>
+      
         <!-- <p>1111</p> -->
       <!-- </div> -->
     </div>
@@ -64,7 +63,7 @@
     
     <div class="lt_footer">
       <a  href="index.html"><span class="fa fa-home"></span><p>首页</p></a>
-      <a  href="category.html"><span class="fa fa-align-justify"></span><p>分类</p></a>
+      <a class="now" href="category.html"><span class="fa fa-align-justify"></span><p>分类</p></a>
       <a  href="cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
       <a  href="user.html"><span class="fa fa-user"></span><p>会员中心</p></a>
     </div>
@@ -76,6 +75,23 @@
 
 
   <script type="text/html" id="tpl">
+    {{each rows as v i}}
+      <a data-id="{{v.id}}" class="{{i==0?'now':''}}" href="javascript:;">{{v.categoryName}}</a>
+    {{/each}}
+  </script>
+
+  <script type="text/template" id="tpl2">
+    {{if rows.length <= 0}}
+      <p class="info">没有更多数据了</p>
+    {{/if}}
+    {{if rows.length >0}}
+      {{each rows as v i}}
+        <a href="javascript:;">
+          <img src="{{v.brandLogo}}" alt="">
+          <p>{{v.brandName}}</p>
+        </a>
+      {{/each}}
+    {{/if}}
     
   </script>
 
