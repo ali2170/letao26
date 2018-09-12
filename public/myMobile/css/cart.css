@@ -56,7 +56,8 @@ p{
 .total{
   position:absolute;
   bottom:55px;
-  left:0;
+  left:50%;
+  transform:translateX(-50%);
   line-height:30px;
   height:30px;
   width: 100%;
@@ -64,6 +65,8 @@ p{
   /* padding:0 10px; */
   background-color:#ccc !important;
   font-size:12px;
+  max-width:640px;
+  /* margin:0 auto; */
 }
 
 .total span{
@@ -89,9 +92,12 @@ p{
 }
 .lt_content .num{
   padding:10px;
-  border-top:1px solid #ccc;  
+  /* border-top:1px solid #ccc;   */
 }
 
 .lt_content .num span{
   font-size:14px;
 }  
+.lt_container{
+  padding-bottom:85px;
+}

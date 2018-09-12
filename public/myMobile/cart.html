@@ -61,12 +61,14 @@
       <!-- </div> -->
     </div>
     <div class="total">
-      <p>订单总金额: &yen;<span>00.00</span></p>
-      <button class="btn mui-btn-danger mui-pull-right">生成订单</button>
+      <p>订单总金额: &yen;<span>00.00</span>
+        <button class="btn mui-btn-danger mui-pull-right">生成订单</button>
+      </p>
+      
     </div>
     
     <div class="lt_footer">
-      <a  href="index.html"><span class="fa fa-home"></span><p>首页</p></a>
+      <a  href="index.html"><span class="fa fa-home"></span><p>首页</p></button>
       <a  href="category.html"><span class="fa fa-align-justify"></span><p>分类</p></a>
       <a class="now" href="cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
       <a  href="user.html"><span class="fa fa-user"></span><p>会员中心</p></a>
@@ -89,7 +91,7 @@
           data-productSize={{v.productSize}} 
           data-num={{v.num}} 
           class="edit mui-btn mui-btn-blue mui-icon mui-icon-compose" style="transform: translate(0px, 0px);"></a>
-          <a class="del mui-btn mui-btn-red mui-icon mui-icon-trash" style="transform: translate(-90px, 0px);"></a>
+          <a data-id={{v.id}} class="del mui-btn mui-btn-red mui-icon mui-icon-trash" style="transform: translate(-90px, 0px);"></a>
           <!-- <a class="mui-btn mui-btn-red mui-icon mui-icon-email" style="transform: translate(-180px, 0px);"></a> -->
         </div>
         <div class="mui-slider-handle" style="transform: translate(0px, 0px);">

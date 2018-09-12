@@ -61,4 +61,26 @@ $(function(){
     mui.confirm(html,"温馨提示")
   })
 
+  $("#refreshContainer").on("tap",".del",function(){
+    var id = $(this).data("id");
+    mui.confirm("您确定要删除该购物信息吗?","温馨提示",["是","否"],function(e){
+      if(e.index === 1){
+        mui.toast("操作取消");
+      }
+      if(e.index === 0){
+        $.ajax({
+          type:"get",
+          url:'/cart/deleteCart',
+          data:{
+            id:id
+          },
+          success:function(data){
+            console.log(data);
+            mui(".mui-scroll-wrapper").pullRefresh().pulldownLoading();            
+          }
+        })
+      }
+    })
+  })
+
 })

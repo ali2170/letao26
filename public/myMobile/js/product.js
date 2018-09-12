@@ -91,6 +91,10 @@ $(".add").on("click",function(){
       if(data.success){
         mui.toast("添加成功了");
         return;
+      }else{
+        // var url = "product.html?"
+        // location.href="login.html?lastUrl="+location.href;
+        mui.toast("请先登录");
       }
     }
   })
