@@ -47,6 +47,10 @@ $(function(){
       // console.log(newArr);
       data.newArr = newArr;
       $(".lt_content .mui-scroll").html(template("tpl",data));
+
+      $(".lt_content .size span").on("click",function(){
+        $(this).addClass("now").siblings().removeClass("now");
+      })
       // mui(".num").numbox();
       mui(".mui-numbox").numbox();
       mui(".mui-slider").slider({
@@ -60,7 +64,37 @@ $(function(){
   render(id);
   
 
-
+$(".add").on("click",function(){
+  var size = "";
+  $(".size span").each(function(i,v){
+    if($(v).hasClass("now")){
+      size = $(this).text(); 
+    }
+  })
+  if(!size){
+    mui.toast("请选择尺码");
+    return;
+  }
+  // console.log(size);
+  var id = $(".num-input").data("id");
+  var num = $(".num-input").val();
+  // console.log(num);
+  $.ajax({
+    type:"post",
+    url:"/cart/addCart",
+    data:{
+      productId:id,
+      num:num,
+      size:size
+    },
+    success:function(data){
+      if(data.success){
+        mui.toast("添加成功了");
+        return;
+      }
+    }
+  })
+})
 
 
 

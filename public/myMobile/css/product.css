@@ -46,6 +46,9 @@
   font-size:14px;
 }  
 
+.lt_content .size span.now{
+  background-color:blue;
+}
 .product_footer{
   height: 55px;
   /* padding:10px; */

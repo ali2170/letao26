@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.lt_content .box{
+  width: 100%;
+  padding:  10px;
+}
+
+.lt_content .box button{
+  width: 100%;
+}
