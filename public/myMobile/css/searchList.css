@@ -30,7 +30,7 @@
   height: 50px;
   border:5px solid blue;
   margin:20px auto;
-  animation:zhuan 2s linear infinite;
+  animation:zhuan 1s linear infinite;
 }
 
 @keyframes zhuan{
