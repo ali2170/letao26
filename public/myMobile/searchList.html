@@ -58,14 +58,9 @@
 
           <div class="lt_product">
               <ul class="mui-clearfix">
-                <li>
-                  <a href="javascript:;">
-                    <img src="./img/product.jpg" alt="">
-                    <p class="title mui-ellipsis-2 mui-text-left">adidas阿迪达斯 男士 场下休闲篮球鞋S93700</p>
-                    <p><span class="price">&yen;560.00</span>&nbsp;<span class="oldPrice">&yen;560</span></p>
-                    <button class="btn mui-btn-primary">立即购买</button>
-                  </a>
-                </li>
+                
+                <!-- 挖个坑 -->
+                <div class="box"></div>
                 
               </ul>
             </div>
@@ -95,7 +90,16 @@
 
 
   <script type="text/html" id="tpl">
-    
+    {{each data as v i}}
+    <li>
+      <a href="product.html?id={{v.id}}">
+        <img src="{{v.pic[0].picAddr}}" alt="">
+        <p class="title mui-ellipsis-2 mui-text-left">{{v.proName}}</p>
+        <p><span class="price">&yen;{{v.price}}</span>&nbsp;<span class="oldPrice">&yen;{{v.oldPrice}}</span></p>
+        <button class="btn mui-btn-primary">立即购买</button>
+      </a>
+    </li>
+    {{/each}}
   </script>
 
   <script src="./assets/zepto/zepto.min.js"></script>
