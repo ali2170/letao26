@@ -41,3 +41,20 @@
     transform:rotate(360deg);
   }
 }
+
+
+#price.now a{
+  color:orange;
+}
+
+#price.now a span{
+  color:orange;
+}  
+
+#stock.now a{
+  color:orange;
+}
+
+#stock.now a span{
+  color:orange;
+}

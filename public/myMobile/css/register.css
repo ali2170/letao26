@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-
+.lt_content{
+  padding:10px;
+}
 .btn_register{
   display:block;
   /* width: 100%; */
@@ -8,8 +10,24 @@
   margin:0 10px;
   font-size:16px;
 }
-mui-input-row{
-  /* border:1px solid red; */
-  margin:10px;
+.mui-input-row{
+  /* width: 100%; */
+  margin-bottom:10px;
   height: 40px;
+}
+.mui-input-row input{
+  border:1px solid #ccc !important;
+  
+}
+
+*{
+  -webkit-tap-highlight-color:transparent !important;
+}
+.mui-input-row .get{
+  width: 35% !important;
+}  
+
+.yanzheng{
+  width: 60% !important;
+  border:1px solid #ccc !important;
 }

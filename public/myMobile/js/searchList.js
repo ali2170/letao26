@@ -22,7 +22,7 @@ $(function(){
 
   var obj = getSearch();
   var key = obj.key;
-  console.log(key);
+  // console.log(key);
   $("#search_txt").val(key);
 
 
@@ -51,44 +51,81 @@ $(function(){
     }
     arr.unshift(txt);    
     localStorage.setItem("lt_search_history",JSON.stringify(arr));
-    render();
+    // render();
 
     location.href = "searchList.html?key="+txt;
   })
-  // var option = {
-  //   proName:key,
-  //   page:1,
-  //   pageSize:10
-  // }
+  var option = {
+    proName:key,
+    page:1,
+    pageSize:10,
+    price:0,
+    num:0
+  }
 
-  function render(){
+  function render(option){
     $.ajax({
       type:"get",
       url:"/product/queryProduct",
-      data:{
-        proName:key,
-        page:1,
-        pageSize:10
-      },
+      data:option,
       success:function(data){
-        console.log(data);
-        setInterval(function(){
+        // console.log(data);
+        setTimeout(function(){
           if(data.data.length == 0){
             $(".lt_product ul").html("<p>没有更多数据了</p>");
           }else{
-
             $(".lt_product ul").html(template("tpl",data));          
-
           }
         },2000)
-      },
-      error:function(){
-        console.log("出错了")
       }
     })
   }
 
-  render();
+  render(option);
   
+  $("#price").on("tap",function(){
+    $(this).toggleClass("now");
+    // console.log($("#price").hasClass("now"))
+    if($("#price").hasClass("now")){
+      // console.log("呵呵")
+      // console.log($(this).children())
+      
+      // console.log(option);
+      option.price = 1;
+      render(option);
+      $(this).find("span").removeClass("fa-angle-down");
+      $(this).find("span").addClass("fa-angle-up");
+
+      
+    }else{
+      // console.log("哈哈")
+      option.price = 2;
+      render(option);
+      $(this).find("span").addClass("fa-angle-down");
+      $(this).find("span").removeClass("fa-angle-up");
+    }
+  })
+
+
+
+  $("#stock").on("click",function(){
+    $(this).toggleClass("now");
+    // console.log($("#price").hasClass("now"))
+    if($(this).hasClass("now")){
+      // console.log("呵呵")
+      // console.log($(this).children())
+      option.num = 1;
+      render(option);
+      $(this).find("span").removeClass("fa-angle-down");
+      $(this).find("span").addClass("fa-angle-up");
+    }else{
+      option.num = 2;
+      render(option);
+      
+      // console.log("哈哈")
+      $(this).find("span").addClass("fa-angle-down");
+      $(this).find("span").removeClass("fa-angle-up");
+    }
+  })
 
 })
