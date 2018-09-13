@@ -49,17 +49,64 @@ $(function(){
     $(".total span").html(total );
   })
 
-  // 编辑
+  // 选择尺码
+
+  
+  
+  // 编辑功能
+
 
   $("#refreshContainer").on("tap",".edit",function(){
     var id = $(this).data("id");
     var size = $(this).data("size");
     var num = $(this).data("num");
-    var html = template("tpl2",this.dataset);
-    console.log(html)
-    // mui(".mui-numbox").numbox();
-    mui.confirm(html,"温馨提示")
+    var data = this.dataset;
+    var html = template("tpl2",data);
+    // console.log(this.dataset)
+    // console.log(html)
+    html = html.replace(/\n/g, "");    
+    // html = html.replace(/n\g,"");
+    mui.confirm(html,"编辑商品",["确定","取消"],function(e){
+      // mui(".mui-numbox").numbox()
+      if(e.index === 1){
+        mui.toast("操作取消");
+      }
+      if(e.index === 0){
+        var size = $(".size span.now").text();
+        var num = $(".mui-numbox-input").val();
+        var id = $(".mui-numbox-input").data("id");
+        $.ajax({
+          type:"post",
+          url:"/cart/updateCart",
+          data:{
+            id:id,
+            num:num,
+            size:size
+          },
+          success:function(data){
+            if(data.success){
+              mui.toast("编辑成功");
+              mui(".mui-scroll-wrapper").pullRefresh().endPulldownToRefresh();
+              mui(".mui-scroll-wrapper").pullRefresh().pulldownLoading();            
+            }
+          }
+
+        })
+      }
+
+    })
+    mui(".mui-numbox").numbox();
+    $(".size span").on("tap",function(){
+      $(this).addClass("now").siblings().removeClass("now");
+    })
+
   })
+
+
+  
+
+
+  // 删除功能
 
   $("#refreshContainer").on("tap",".del",function(){
     var id = $(this).data("id");
@@ -82,5 +129,8 @@ $(function(){
       }
     })
   })
+
+
+
 
 })
