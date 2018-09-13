@@ -24,10 +24,26 @@
   -webkit-tap-highlight-color:transparent !important;
 }
 .mui-input-row .get{
-  width: 35% !important;
+  width: 38% !important;
 }  
 
 .yanzheng{
   width: 60% !important;
   border:1px solid #ccc !important;
+}
+
+.mui-button-row:last-child{
+  font-size:12px;
+}
+
+.get{
+  background-color:blue;
+  height:40px;
+  padding:0 5px;
+  text-align:center;
+  /* line-height:40px; */
+  color:#fff;
+  border-radius:10px;
+  font-size:14px;
+  display:block;
 }

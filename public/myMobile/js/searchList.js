@@ -1,5 +1,6 @@
 $(function(){
 
+  
   function getSearch(){
     var str = decodeURI(location.search);
 
@@ -24,7 +25,13 @@ $(function(){
   var key = obj.key;
   // console.log(key);
   $("#search_txt").val(key);
-
+  var option = {
+    proName:key,
+    page:1,
+    pageSize:10,
+    price:0,
+    num:0
+  }
 
   function getHistory(){
     var str = localStorage.getItem("lt_search_history") || "[]";
@@ -51,17 +58,11 @@ $(function(){
     }
     arr.unshift(txt);    
     localStorage.setItem("lt_search_history",JSON.stringify(arr));
-    // render();
+    // render(option);
 
     location.href = "searchList.html?key="+txt;
   })
-  var option = {
-    proName:key,
-    page:1,
-    pageSize:10,
-    price:0,
-    num:0
-  }
+  
 
   function render(option){
     $.ajax({
