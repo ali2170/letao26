@@ -17,6 +17,7 @@ $(function(){
               
                 setTimeout(function(){
                 $("#refreshContainer .mui-table-view").html(template("tpl",{data:data}))
+                $(".total span").html("0.00");
                 mui(".mui-scroll-wrapper").pullRefresh().endPulldownToRefresh();
                 
                 
