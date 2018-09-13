@@ -94,7 +94,8 @@ $(".add").on("click",function(){
       }else{
         // var url = "product.html?"
         // location.href="login.html?lastUrl="+location.href;
-        mui.toast("请先登录");
+        location.href="login.html?lastUrl="+location.href;        
+        // mui.toast("请先登录");
       }
     }
   })

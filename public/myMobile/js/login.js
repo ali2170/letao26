@@ -1,26 +1,21 @@
 $(function(){
 
   // 获取地址栏参数
-  function getSearch(){
+  function getUrl(){
     var str = decodeURI(location.search);
 
-    str = str.replace("?","");
+    str = str.replace("?lastUrl=","");
     // console.log(str);
 
-    var arr = str.split("&");
+    return str;
 
-    var obj = {};
-    arr.forEach(function(v,i){
-      var newArr = v.split("=");
-      obj[newArr[0]]=newArr[1];
-    })
     // var arr = str.split("=");
     // var obj = {};
     // obj[arr[0]]=arr[1];
-    return obj;
+    // return obj;
   }
 
-  var url = getSearch().lastUrl;
+  var url = getUrl();
   console.log(url);
 
   $(".btn_register").on("click",function(){
